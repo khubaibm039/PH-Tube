@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>86-PHero-tube</title>
+    <script src="https://kit.fontawesome.com/8c648e47d1.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="container mx-auto">
+    <header class="my-12">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="">
+                    <img src="img/Logo.png" alt="">
+
+                </div>
+            </div>
+            <div class="navbar-center">
+                <a id="sort-by-views-button" onclick="sortByViews()" class="btn btn-active normal-case text-xl">Sort by
+                    view</a>
+            </div>
+            <div class="navbar-end">
+
+                <!-- <button class="btn btn-error text-white">Blog</button> -->
+                <!-- Open the modal using ID.showModal() method -->
+                <button class="btn btn-error text-white" onclick="my_modal.showModal()">Blog</button>
+                <dialog id="my_modal" class="modal">
+                    <form method="dialog" class="modal-box">
+                        <h3 class="font-bold text-lg">Discuss the scope of var, let, and const ?</h3>
+                        <p class="py-4"> => var is a globally scoped. let and const are block scoped</p>
+                        <h3 class="font-bold text-lg">Tell us the use cases of null and undefined?</h3>
+                        <p class="py-4"> => Undefined means the variable has been declared, but its value has not been
+                            assigned, Null means an empty value. </p>
+                        <h3 class="font-bold text-lg">What do you mean by REST API?</h3>
+                        <p class="py-4"> => API : application programming interface</p>
+                    </form>
+                    <form method="dialog" class="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <section id="btn-container" class="flex justify-center gap-6">
+        </section>
+
+        <section id="card-container" class="my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        </section>
+
+        <section id="drawing-container" class="hidden">
+            <div class="grid justify-items-center content-center py-12 gap-4">
+                <img src="img/Icon.png" alt="">
+                <h3 class="text-xl font-bold text-center">Oops!! Sorry, There is no <br> content here</h3>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- js file -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
