@@ -32,7 +32,7 @@ const handleLoadVideos = async (id) => {
 }
 
 const cardContainer = (data) => {
-    console.log(data)
+    // console.log(data)
     const cardContainer = document.getElementById('card-container')
     const drawingContainer = document.getElementById('drawing-container')
     cardContainer.innerHTML = ""
@@ -49,8 +49,6 @@ const cardContainer = (data) => {
 
     data.forEach((videos) => {
         // console.log(videos)
-
-
         const cardDiv = document.createElement('div')
         cardDiv.className = `card  bg-base-100 shadow-xl p-2`
         cardDiv.innerHTML = `
@@ -70,8 +68,7 @@ const cardContainer = (data) => {
             <div>
                 <h1 class="font-bold">${videos.title}</h1>
                 <p class="flex"> ${videos.authors[0].profile_name}
-                    <span> <img id="img"  class="w-5 h-5 " src="./img/correct.png">  <span id= "blue-tick"> ${videos.authors[0].verified ? videos.authors[0].verified : ""}</span>
-                    </span >
+                        <span class = "ml-4"> <img id="verified-img"" class="w-5 h-5" src="./img/correct.png"></span>
                 </p >
     <p>${videos.others.views}</p>
 
@@ -84,6 +81,20 @@ const cardContainer = (data) => {
 
 
         cardContainer.appendChild(cardDiv);
+
+        const verified = videos.authors[0].verified
+        // console.log(verified);
+        const verifiedImg = cardDiv.querySelector('#verified-img')
+        console.log(verifiedImg);
+
+        if (!verified) {
+            verifiedImg.className = 'hidden';
+
+        }
+        else {
+            // verifiedImg.classList.add('hidden');
+        }
+
         // Calculate and display the time in hours and minutes ago
         const postedDateInSeconds = videos.others.posted_date;
         const hoursAgo = Math.floor(postedDateInSeconds / 3600);
@@ -106,4 +117,6 @@ const cardContainer = (data) => {
 
 allTheBtn()
 handleLoadVideos(1000)
+
+
 
